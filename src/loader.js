@@ -37,6 +37,7 @@ const loadHeader = () => {
 const loadMain = () => {
 
     const container = document.createElement('div');
+    container.setAttribute('id', 'main'); 
 
     const header = document.createElement('div'); 
 
