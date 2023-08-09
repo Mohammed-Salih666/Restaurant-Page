@@ -65,8 +65,46 @@ const loadMain = () => {
     return container; 
 }
 
-const loadMenu = () => {
+const loadMenu = (type) => {
 
+    const container = document.createElement('div'); 
+    container.setAttribute('id', 'menu'); 
+
+    const section1 = document.createElement('div'); 
+    const section2 = document.createElement('div'); 
+
+    const header1 = document.createElement('h3'); 
+    header1.textContent = "Section 1"; 
+    // const item1 = document.createElement('p'); 
+    // item1.textContent("item1"); 
+    // price1 = document.createElement('p');
+    // price1.textContent("$00.00");
+
+
+    for(let i=1; i<=5; i++){
+        let item = document.createElement('p');
+        let price = document.createElement('p'); 
+        item.textContent = `item ${i}`;
+        price.textContent = "00.00$";
+
+        section1.append(item, price); 
+    }
+
+    const header2 = document.createElement('h3'); 
+    header2.textContent = "Section 2";
+    
+    for(let i=1; i<=5; i++){
+        let item = document.createElement('p');
+        let price = document.createElement('p'); 
+        item.textContent = `item ${i}`;
+        price.textContent = "00.00$";
+
+        section2.append(item, price); 
+    }
+
+    container.append(section1, section2);
+
+    return container; 
 }
 
 export {
