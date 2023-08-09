@@ -50,6 +50,7 @@ const loadMain = () => {
     header.append(mainHeader, caption);
 
     const contact = document.createElement('div'); 
+    contact.setAttribute('id', 'contact');
     const instagram = document.createElement('img'); 
     instagram.setAttribute('src', '../src/icons8-instagram-48.png');
     
