@@ -51,11 +51,10 @@ const loadMain = () => {
 
     const contact = document.createElement('div'); 
     const instagram = document.createElement('img'); 
-    instagram.setAttribute('id', 'instagram'); 
+    instagram.setAttribute('src', '../src/icons8-instagram-48.png');
     
     const facebook = document.createElement('img');
-    facebook.setAttribute('id', 'facebook');
-
+    facebook.setAttribute('src', '../src/icons8-facebook-48.png');
     const number = document.createElement('p'); 
     number.textContent = "+9647712345678"; 
     contact.append(instagram, facebook, number);
