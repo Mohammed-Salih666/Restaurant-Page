@@ -1,3 +1,6 @@
+import Logo from './ouroboros.png';
+import InstagramLogo from './icons8-instagram-48.png';
+import FacebookLogo from './icons8-facebook-48.png'; 
 
 const loadHeader = () => {
 
@@ -6,14 +9,14 @@ const loadHeader = () => {
 
     const logoContainer = document.createElement('div'); 
 
-    const logo = document.createElement('img'); 
-    logo.setAttribute('id', 'logo'); 
-    logo.setAttribute('src', '../src/ouroboros.png');
+    const myLogo = new Image(); 
+    myLogo.src = Logo; 
+    myLogo.id = 'logo';
 
     const title = document.createElement('h1'); 
     title.textContent = "uroboros Bistro";
 
-    logoContainer.append(logo, title);
+    logoContainer.append(myLogo, title);
 
     const nav = document.createElement('nav'); 
 
@@ -57,14 +60,23 @@ const loadMain = () => {
 
     const contact = document.createElement('div'); 
     contact.setAttribute('id', 'contact');
-    const instagram = document.createElement('img'); 
-    instagram.setAttribute('src', '../src/icons8-instagram-48.png');
+    // const instagram = document.createElement('img'); 
+    // instagram.setAttribute('src', '../src/icons8-instagram-48.png');
     
-    const facebook = document.createElement('img');
-    facebook.setAttribute('src', '../src/icons8-facebook-48.png');
+    // const facebook = document.createElement('img');
+    // facebook.setAttribute('src', '../src/icons8-facebook-48.png');
+
+    const instagram = new Image(); 
+    instagram.src = InstagramLogo; 
+    
+    const facebook = new Image(); 
+    facebook.src = FacebookLogo; 
+
+
     const number = document.createElement('p'); 
     number.textContent = "+9647712345678"; 
     contact.append(instagram, facebook, number);
+
 
     container.append(header, contact);
 
