@@ -70,39 +70,88 @@ const loadMenu = (type) => {
     const container = document.createElement('div'); 
     container.setAttribute('id', 'menu'); 
 
-    const section1 = document.createElement('div'); 
-    const section2 = document.createElement('div'); 
+    // const section1 = document.createElement('div'); 
+    // const section2 = document.createElement('div'); 
 
-    const header1 = document.createElement('h3'); 
-    header1.textContent = "Section 1"; 
-    // const item1 = document.createElement('p'); 
-    // item1.textContent("item1"); 
-    // price1 = document.createElement('p');
-    // price1.textContent("$00.00");
+    // const header1 = document.createElement('h1'); 
+    // header1.textContent = "Section 1"; 
+    // section1.appendChild(header1);
 
+    // for(let i=1; i<=5; i++){
+    //     let item = document.createElement('p');
+    //     let price = document.createElement('p'); 
+    //     item.textContent = `item${i}       $00.00`;
+    //     // price.textContent = "00.00$";
 
-    for(let i=1; i<=5; i++){
-        let item = document.createElement('p');
-        let price = document.createElement('p'); 
-        item.textContent = `item ${i}`;
-        price.textContent = "00.00$";
+    //     section1.append(item, price); 
+    // }
 
-        section1.append(item, price); 
+    // const header2 = document.createElement('h1'); 
+    // header2.textContent = "Section 2";
+    // section2.appendChild(header2);
+    // for(let i=1; i<=5; i++){
+    //     let item = document.createElement('p');
+    //     let price = document.createElement('p'); 
+    //     item.textContent = `item${i}       $00.00`;
+    //     // price.textContent = "00.00$";
+
+    //     section2.append(item, price); 
+    // }
+
+    // container.append(section1, section2);
+    let html = `
+        <h2>Brunch Menu</h2>
+        <div>
+            <div class="section">
+                <div class="menu-item">
+                    <p>American Breakfast</p>
+                    <p>$8.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>Britich Breakfast</p>
+                    <p>$8.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>Swedish Breakfast</p>
+                    <p>$10.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>Omlette(pick the filling)</p>
+                    <p>$7.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>Iraqi Traditional Breakfast</p>
+                    <p>$9.00</p>
+                </div>
+            </div>
+            <div class="section">
+                <div class="menu-item">
+                    <p>Egg Salad</p>
+                    <p>$6.50</p>
+                </div>
+                <div class="menu-item">
+                    <p>Club Sandwich</p>
+                    <p>$7.50</p>
+                </div>
+                <div class="menu-item">
+                    <p>Turkey and Eggs burger</p>
+                    <p>$12.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>Cheese Collection</p>
+                    <p>$7.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>Mini Margaritta</p>
+                    <p>$7.00</p>
+                </div>
+            </div>
+        </div>`
+;
+
+    if(type === 1) {
+        container.insertAdjacentHTML('afterbegin', html);
     }
-
-    const header2 = document.createElement('h3'); 
-    header2.textContent = "Section 2";
-    
-    for(let i=1; i<=5; i++){
-        let item = document.createElement('p');
-        let price = document.createElement('p'); 
-        item.textContent = `item ${i}`;
-        price.textContent = "00.00$";
-
-        section2.append(item, price); 
-    }
-
-    container.append(section1, section2);
 
     return container; 
 }
