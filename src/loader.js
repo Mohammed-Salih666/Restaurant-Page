@@ -8,13 +8,19 @@ const loadHeader = () => {
 
     const logo = document.createElement('img'); 
     logo.setAttribute('id', 'logo'); 
+    logo.setAttribute('src', '../src/ouroboros.png');
 
     const title = document.createElement('h1'); 
-    title.textContent = "Ouroboros Bistro";
+    title.textContent = "uroboros Bistro";
 
     logoContainer.append(logo, title);
 
     const nav = document.createElement('nav'); 
+
+    const home = document.createElement('button');
+    home.textContent = "Home";
+    home.setAttribute('id', 'home'); 
+
     const brunch = document.createElement('button');
     brunch.textContent = "Brunch"; 
 
@@ -27,7 +33,7 @@ const loadHeader = () => {
     const drinks = document.createElement('button'); 
     drinks.textContent = "Drinks"; 
 
-    nav.append(brunch, starters, mains, drinks); 
+    nav.append(home, brunch, starters, mains, drinks); 
 
     header.append(logoContainer, nav); 
     return header; 
@@ -44,7 +50,7 @@ const loadMain = () => {
     const mainHeader = document.createElement('h1'); 
     mainHeader.textContent = "Ouroboros"; 
 
-    const caption = document.createElement('h4'); 
+    const caption = document.createElement('h3'); 
     caption.textContent = "Extraordinary food since 2017";
 
     header.append(mainHeader, caption);
@@ -70,37 +76,8 @@ const loadMenu = (type) => {
     const container = document.createElement('div'); 
     container.setAttribute('id', 'menu'); 
 
-    // const section1 = document.createElement('div'); 
-    // const section2 = document.createElement('div'); 
-
-    // const header1 = document.createElement('h1'); 
-    // header1.textContent = "Section 1"; 
-    // section1.appendChild(header1);
-
-    // for(let i=1; i<=5; i++){
-    //     let item = document.createElement('p');
-    //     let price = document.createElement('p'); 
-    //     item.textContent = `item${i}       $00.00`;
-    //     // price.textContent = "00.00$";
-
-    //     section1.append(item, price); 
-    // }
-
-    // const header2 = document.createElement('h1'); 
-    // header2.textContent = "Section 2";
-    // section2.appendChild(header2);
-    // for(let i=1; i<=5; i++){
-    //     let item = document.createElement('p');
-    //     let price = document.createElement('p'); 
-    //     item.textContent = `item${i}       $00.00`;
-    //     // price.textContent = "00.00$";
-
-    //     section2.append(item, price); 
-    // }
-
-    // container.append(section1, section2);
-    let html = `
-        <h2>Brunch Menu</h2>
+    const brunchHtml = `
+        <h1>Brunch Menu</h1>
         <div>
             <div class="section">
                 <div class="menu-item">
@@ -149,8 +126,140 @@ const loadMenu = (type) => {
         </div>`
 ;
 
-    if(type === 1) {
-        container.insertAdjacentHTML('afterbegin', html);
+    const startersHtml = `
+    <h1>Starters Menu</h1>
+        <div>
+            <div class="section">
+                <div class="menu-item">
+                    <p>Hummus</p>
+                    <p>$4.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>French Cheese and Crackers</p>
+                    <p>$6.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>Ourabora Toast</p>
+                    <p>$8.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>Fruity Frozen Yogurt</p>
+                    <p>$5.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>Berries Salad</p>
+                    <p>$7.00</p>
+                </div>
+
+                <div class="menu-item">
+                    <p>Cheese and Veggies Salad</p>
+                    <p>$7.00</p>
+                </div>
+
+                <div class="menu-item">
+                    <p>Lizzard Tails</p>
+                    <p>$20.00</p>
+                </div>
+
+            </div>
+           
+        </div>
+    `;
+
+
+    const mainsHtml = `
+    <h1>Mains</h1>
+    <div>
+        <div class="section">
+            <div class="menu-item">
+                <p>Steak</p>
+                <p>$25.00</p>
+            </div>
+            <div class="menu-item">
+                <p>Smoked Salmon</p>
+                <p>$30.00</p>
+            </div>
+            <div class="menu-item">
+                <p>Serpent Heart</p>
+                <p>$50.00</p>
+            </div>
+            <div class="menu-item">
+                <p>Medieval Burger</p>
+                <p>$12.00</p>
+            </div>
+            <div class="menu-item">
+                <p>Eastren Collection</p>
+                <p>$45.00</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="menu-item">
+                <p>Veggies Collection</p>
+                <p>$8.50</p>
+            </div>
+            <div class="menu-item">
+                <p>Mixed Meats Philadelphia Sandwich</p>
+                <p>$13.50</p>
+            </div>
+            <div class="menu-item">
+                <p>Stone Age Chicken</p>
+                <p>$13.00</p>
+            </div>
+        </div>
+    </div>`;
+
+   const drinksHtml = `
+    <h1>Drinks</h1>
+        <div>
+            <div class="section">
+                <div class="menu-item">
+                    <p>Soda</p>
+                    <p>$2.75</p>
+                </div>
+                <div class="menu-item">
+                    <p>Amazon River Water</p>
+                    <p>$5.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>Eternal Life Elixir Cocktail</p>
+                    <p>$10.00</p>
+                </div>
+                <div class="menu-item">
+                    <p>The Devil's Macchiato</p>
+                    <p>$7.50</p>
+                </div>
+                <div class="menu-item">
+                    <p>Dark Matter Extract</p>
+                    <p>$7.00</p>
+                </div>
+
+                <div class="menu-item">
+                    <p>Heaven and Hell</p>
+                    <p>$12.00</p>
+                </div>
+
+                <div class="menu-item">
+                    <p>"Orange" Juice</p>
+                    <p>$20.00</p>
+                </div>
+
+            </div>
+           
+        </div>
+    `;
+
+    if(type === "brunch") {
+        container.insertAdjacentHTML('afterbegin', brunchHtml);
+    }
+    else if (type==="starters") {
+        container.insertAdjacentHTML('afterbegin', startersHtml);
+    }
+    else if (type==="mains") {
+        container.insertAdjacentHTML('afterbegin', mainsHtml);
+    }
+    else if (type==="drinks") {
+        container.insertAdjacentHTML('afterbegin', drinksHtml);
     }
 
     return container; 
