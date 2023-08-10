@@ -39,11 +39,9 @@ nav > button {
 
 }
 
-nav > button:focus { 
-    /* box-shadow: none; */
-
+/* nav > button:focus { 
     background-color: #ffffff;
-}
+} */
 
 #header h1 { 
     font-size: 2.5rem;

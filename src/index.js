@@ -3,14 +3,10 @@ import './header.css';
 import './main.css';
 import './menu.css';
 
-window.onload = () => {
-    let home = document.getElementById('home'); 
-    home.style = "background-color: white;";
-}
+
 const container = document.querySelector('#content'); 
 container.appendChild(loadHeader()); 
-const main = loadMain();
-container.appendChild(main);
+container.appendChild(loadMain());
 
 const btns = document.querySelectorAll('button'); 
 
@@ -19,6 +15,8 @@ btns.forEach((btn => {
         // btn.style = "box-shadow: none;";
         container.removeChild(container.lastChild); 
         container.appendChild(loadMenu(btn.textContent.toLowerCase()));
+        btns.forEach(button => button.style ="background-color: #e5ffde;");
+        btn.style.background = "white";
     });
 }));
 
@@ -27,4 +25,6 @@ homeBtn.addEventListener('click', ()=>{
     container.removeChild(container.lastChild); 
     container.appendChild(loadMain());
 })
-homeBtn.autofocus = true;
+window.onload = () => {
+    homeBtn.style = "background-color: white;";
+}
